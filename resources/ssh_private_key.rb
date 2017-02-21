@@ -1,11 +1,21 @@
 resource_name :ssh_private_key
 
 property :user, String, name_property: true
+property :source, String, default: node['ssh-private-keys']['default_source']
+property :bag, String, default: node['ssh-private-keys']['data_bag_name']
+property :data_bag_layout_advanced, [TrueClass, FalseClass], default: node['ssh-private-keys']['data_bag_layout']['advanced']
 
 default_action :deploy
 
 action :deploy do
-  helper = ::ChefCookbook::SSHPrivateKey.new node
+
+  if source == 'chef-vault'
+    chef_gem "chef-vault" do
+      compile_time true
+    end
+  end
+
+  helper = ::ChefCookbook::SSHPrivateKey.new(node, source, bag, data_bag_layout_advanced)
 
   actual_item = helper.ssh_private_key_entry new_resource.user
 
@@ -30,3 +40,5 @@ action :deploy do
     end
   end
 end
+
+# vim: set ts=2 softtabstop=2 shiftwidth=2 expandtab:
