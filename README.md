@@ -42,10 +42,33 @@ Server hostname will be automatically detected and the appropriate record will b
 
 ## Attributes
 
+You can use attributes to specify the default behavior for `ssh_private_key` resource.
+
 * `default['ssh-private-keys']['default_source']` - Specify 'databag' or 'chef-vault'
 * `default['ssh-private-keys']['data_bag_name']` - Bag name or vault name to load ssh keys from
 * `default['ssh-private-keys']['data_bag_layout']['advanced']` - Specify databag layout type. May be 'true' or 'false'
 
+
+## Properties
+
+You can override default values specified in attributes by defining custom properties on the particular resource.
+
+`ssh_private_key` resource has the following properties:
+
+* `source` - Specify 'databag' or 'chef-vault'
+* `bag` - Data bag name or vault name to load ssh keys from (default is 'ssh-private-keys')
+* `layout` - Specify databag layout type. May be 'simple' or 'advanced' (default)
+
+
+## Example resource usage
+
+``` ruby
+user "test"
+ssh_private_key "test" do
+    source 'chef-vault'
+    layout 'simple'
+end
+```
 
 ## License
 MIT @ [Alexander Pyatkin](https://github.com/aspyatkin)
