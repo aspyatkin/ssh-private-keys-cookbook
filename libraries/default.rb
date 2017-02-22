@@ -89,8 +89,8 @@ module ChefCookbook
             data_bag_item.to_hash.fetch(instance_hostname, {}).fetch(user, {})
           else
             # we don't need an id in resulting hash
-            data_bag_item.delete('id')
-            data_bag_item
+            data_bag_item.to_hash.delete('id')
+            data_bag_item.to_hash
           end
         end
 
