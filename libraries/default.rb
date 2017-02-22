@@ -4,11 +4,11 @@ require 'chef/resource'
 
 module ChefCookbook
   class SSHPrivateKey
-    def initialize(node, source, bag, data_bag_layout_advanced)
+    def initialize(node, source, bag, layout)
       @node = node
       @source = source
       @bag = bag
-      @data_bag_layout_advanced = data_bag_layout_advanced
+      @layout = layout
     end
 
     class SSHPrivateKeyEntry
@@ -46,7 +46,7 @@ module ChefCookbook
       data_bag_item = nil
       if @source == 'chef-vault'
         require 'chef-vault'
-        if @data_bag_layout_advanced == true
+        if @layout == 'advanced'
           if ChefVault::Item.vault?(@bag, @node.chef_environment)
             data_bag_item = ChefVault::Item.load(@bag, @node.chef_environment)
           elsif @node['chef-vault']['databag_fallback']
@@ -65,7 +65,7 @@ module ChefCookbook
           end
         end
       elsif @source == 'databag'
-        if @data_bag_layout_advanced == True
+        if @layout == 'advanced'
           begin
             data_bag_item = ::Chef::EncryptedDataBagItem.load(
               @bag,
@@ -85,7 +85,7 @@ module ChefCookbook
         if data_bag_item.nil?
           {}
         else
-          if @data_bag_layout_advanced == true
+          if @layout == 'advanced'
             data_bag_item.to_hash.fetch(instance_hostname, {}).fetch(user, {})
           else
             # we don't need an id in resulting hash
@@ -95,7 +95,7 @@ module ChefCookbook
         end
 
       if ssh_key_map.empty?
-        if @data_bag_layout_advanced == true
+        if @layout == 'advanced'
           ::Chef::Application.fatal!(
             "Couldn't find SSH private keys for <#{user}@#{instance_hostname}> "\
             "in data bag <#{@node[@id]['data_bag_name']}::"\

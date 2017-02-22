@@ -10,4 +10,4 @@ default['ssh-private-keys']['data_bag_name'] = 'ssh-private-keys'
 default['chef-vault']['databag_fallback'] = true
 
 # use advanced databag layout with nodes and environments
-default['ssh-private-keys']['data_bag_layout']['advanced'] = true
+default['ssh-private-keys']['data_bag_layout'] ='advanced' # or 'simple'
