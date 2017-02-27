@@ -96,7 +96,7 @@ module ChefCookbook
 
       if ssh_key_map.empty?
         if @layout == 'advanced'
-          ::Chef::Application.fatal!(
+          Chef::Application.fatal!(
             "Couldn't find SSH private keys for <#{user}@#{instance_hostname}> "\
             "in data bag <#{@node[@id]['data_bag_name']}::"\
             "#{@node.chef_environment}>!",
@@ -104,8 +104,8 @@ module ChefCookbook
           )
         else
           Chef::Application.fatal!(
-            "Couldn't find SSH private keys for <#{@user}> "\
-            "in data bag <#{@bag}::",
+            "Couldn't find SSH private keys for <#{user}> "\
+            "in data bag <#{@bag}>",
             99
           )
         end
