@@ -88,9 +88,7 @@ module ChefCookbook
           if @layout == 'advanced'
             data_bag_item.to_hash.fetch(instance_hostname, {}).fetch(user, {})
           else
-            # we don't need an id in resulting hash
-            data_bag_item.to_hash.delete('id')
-            data_bag_item.to_hash
+            data_bag_item.to_hash.fetch('keys', {})
           end
         end
 

@@ -6,7 +6,9 @@ Chef cookbook to deploy OpenSSH private keys on a system. Data is stored in the 
 ``` json
 {
     "id": "admin1",
-    "id_rsa": ""
+    "keys": {
+        "id_rsa": ""
+     }
 }
 ```
 
