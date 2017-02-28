@@ -48,7 +48,7 @@ You can use attributes to specify the default behavior for `ssh_private_key` res
 
 * `default['ssh-private-keys']['default_source']` - Specify 'databag' or 'chef-vault'
 * `default['ssh-private-keys']['data_bag_name']` - Bag name or vault name to load ssh keys from
-* `default['ssh-private-keys']['data_bag_layout']['advanced']` - Specify databag layout type. May be 'true' or 'false'
+* `default['ssh-private-keys']['data_bag_layout']` - Specify databag layout type. May be 'simple' or 'advanced'
 
 
 ## Properties
