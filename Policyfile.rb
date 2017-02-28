@@ -16,4 +16,4 @@ named_run_list :testing, "ssh-private-keys::test"
 
 # Specify a custom source for a single cookbook:
 # cookbook "example_cookbook", path: "../cookbooks/example_cookbook"
-cookbook "ssh-private-keys", path: "../ssh-private-keys"
+cookbook "ssh-private-keys", path: "."
