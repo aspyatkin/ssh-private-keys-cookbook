@@ -72,5 +72,10 @@ ssh_private_key "test" do
 end
 ```
 
+## Testing
+Run `script/bootstrap` to install necessary Ruby Gems.
+
+Run `script/test` to perform [KitchenCI](http://kitchen.ci/) tests.
+
 ## License
 MIT @ [Alexander Pyatkin](https://github.com/aspyatkin)
