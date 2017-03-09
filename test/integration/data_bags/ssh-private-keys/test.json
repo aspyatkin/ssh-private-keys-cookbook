@@ -1,0 +1,6 @@
+{
+    "id": "test",
+    "keys": {
+        "id_rsa": "FOO BAR"
+    }
+}
