@@ -9,13 +9,13 @@ default_action :deploy
 
 action :deploy do
 
-  if source == 'chef-vault'
+  if new_resource.source == 'chef-vault'
     chef_gem "chef-vault" do
       compile_time true
     end
   end
 
-  helper = ::ChefCookbook::SSHPrivateKey.new(node, source, bag, layout)
+  helper = ::ChefCookbook::SSHPrivateKey.new(node, new_resource.source, new_resource.bag, new_resource.layout)
 
   actual_item = helper.ssh_private_key_entry new_resource.user
 
