@@ -1,5 +1,5 @@
 {
-  "revision_id": "749b1fde6790db0cfd95a186e2eca0889375f945ecb017c37ce5de050a92690f",
+  "revision_id": "cb8b395d49a47e1d21bb41bf18f7c1be9f17861603ec369b77d2d1f1ea3ec83e",
   "name": "example-ssh-private-keys",
   "run_list": [
     "recipe[ssh-private-keys::default]"
@@ -14,15 +14,15 @@
   ],
   "cookbook_locks": {
     "ssh-private-keys": {
-      "version": "2.0.0",
-      "identifier": "fd49965bb3a2709c1af1a8ce74b31454f5481ec3",
-      "dotted_decimal_identifier": "71294079240217200.43939721588405427.22355124952771",
+      "version": "2.0.1",
+      "identifier": "59bc92267b8c7b50a4dd96ec1203808007f2bfaf",
+      "dotted_decimal_identifier": "25258608824126587.22699269763633667.141287377518511",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "git@github.com:aspyatkin/ssh-private-keys-cookbook.git",
-        "revision": "68f84c618541ea356fa739515695dfcd2c623fc3",
+        "revision": "96dbd04f00f2f7c786678c2cc853def934b29a18",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -49,7 +49,7 @@
       ]
     ],
     "dependencies": {
-      "ssh-private-keys (2.0.0)": [
+      "ssh-private-keys (2.0.1)": [
 
       ]
     }
