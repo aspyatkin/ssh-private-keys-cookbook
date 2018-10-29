@@ -1,0 +1,57 @@
+{
+  "revision_id": "749b1fde6790db0cfd95a186e2eca0889375f945ecb017c37ce5de050a92690f",
+  "name": "example-ssh-private-keys",
+  "run_list": [
+    "recipe[ssh-private-keys::default]"
+  ],
+  "named_run_lists": {
+    "testing": [
+      "recipe[ssh-private-keys::test]"
+    ]
+  },
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "ssh-private-keys": {
+      "version": "2.0.0",
+      "identifier": "fd49965bb3a2709c1af1a8ce74b31454f5481ec3",
+      "dotted_decimal_identifier": "71294079240217200.43939721588405427.22355124952771",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "git@github.com:aspyatkin/ssh-private-keys-cookbook.git",
+        "revision": "68f84c618541ea356fa739515695dfcd2c623fc3",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/HEAD -> origin/master",
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "ssh-private-keys",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "ssh-private-keys (2.0.0)": [
+
+      ]
+    }
+  }
+}

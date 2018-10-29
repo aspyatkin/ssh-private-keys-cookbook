@@ -1,3 +1,2 @@
 .kitchen/
 .kitchen.local.yml
-Policyfile.lock.json
