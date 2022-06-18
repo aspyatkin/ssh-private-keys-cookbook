@@ -1,3 +1,5 @@
+provides :ssh_private_key
+
 resource_name :ssh_private_key
 
 property :user, String, name_property: true
