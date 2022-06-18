@@ -1,10 +1,10 @@
 name 'ssh-private-keys'
-maintainer 'Alexander Pyatkin'
-maintainer_email 'aspyatkin@gmail.com'
+maintainer 'Aleksandr Piatkin'
+maintainer_email 'oss@aptkn.ch'
 license 'MIT'
 description 'Deploy OpenSSH private keys'
 long_description ::IO.read(::File.join(::File.dirname(__FILE__), 'README.md'))
-version '2.0.1'
+version '2.0.2'
 
 scm_url = 'https://github.com/aspyatkin/ssh-private-keys-cookbook'
 source_url scm_url if respond_to?(:source_url)
